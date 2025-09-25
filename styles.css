@@ -1,0 +1,188 @@
+/*General Styles*/
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  padding: 15px;
+  text-align: right;
+  z-index: 1000;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.navbar ul li a {
+  color: lightpink;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover {
+  color: orange;
+}
+/* Landing Section */
+.landing-header {
+  height: 100vh;
+  background: url("Flower image 1.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.landing-header .overlay {
+  background: rgba(0,0,0,0.5);
+  padding: 40px;
+  border-radius: 15px;
+}
+.animated-text {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+  animation: fadeInOut 4s ease-in-out infinite;
+}
+.tagline {
+  font-size: 1.5rem;
+  margin: 15px 0;
+}
+.btn {
+  padding: 12px 25px;
+  background: orange;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background: darkorange;
+}
+/* General Overlay Sections */
+.overlay-section {
+  position: relative;
+  min-height: 100vh;
+  background: url("Flower image 1.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+.overlay-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.content-box {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+}
+.content-box ul {
+  list-style: none;         
+  display: flex;            
+  flex-wrap: wrap;          /* allow items to wrap into rows */
+  justify-content: center;  
+  gap: 20px;                /* spacing between items */
+  padding: 0;
+  margin: 0;
+}
+
+.content-box ul li {
+  background: white;
+  color: black;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 1.1em;
+  text-align: center;
+  flex: 1 1 calc(50% - 20px); /* 2 items per row */
+  box-sizing: border-box;
+}
+
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+}
+.contact-form button {
+  align-self: center;
+}
+/* Animations */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0; transform: scale(0.9); }
+}
+
+.site-footer {
+  background-color: black;
+  color: white;              
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+}
+
+.site-footer a {
+  color: pink;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .navbar ul li {
+    margin-left: 10px;
+  }
+
+  .animated-text {
+    font-size: 2rem;
+  }
+
+  /* Make services stack in one column on smaller screens */
+  .content-box ul li {
+    flex: 1 1 100%;   /* full width on mobile */
+  }
+}
+
